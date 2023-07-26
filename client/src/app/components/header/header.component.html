@@ -1,0 +1,143 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="!adminToken && !ownerToken">
+    <a class="navbar-brand" routerLink="/"><b>book<img src="./assets/images/my.png" alt="" class="image" width="35px" height="35px" style="padding-left: 0px;">ticket</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- <a class="nav-link" routerLink="/login"> -->
+        <form class="form-inline" #searchForm="ngForm" (ngSubmit)="onSubmit()">
+            <input class="form-control mr-sm-2" type="text"  [(ngModel)]="searchQuery" placeholder="Search for Movies,Events,TvShows......." aria-label="Search" style="width:400px;">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" style="margin-right:90px;">Search</button>
+        </form>
+       <!-- </a> -->
+       <div class="header">
+        <!-- Use Bootstrap's dropdown component for the location selection -->
+        <div class="dropdown" style="margin-top: 4px;">
+          <button class="btn btn-secondary dropdown-toggle" type="button" (click)="showLocationsPopup()">
+            {{ selectedLocation }}
+          </button>
+          <div *ngIf="showPopup" class="dropdown-menu" style="display: block;">
+            <a class="dropdown-item" *ngFor="let location of locations" (click)="selectLocation(location)">
+              <span class="location-name">{{ location.name }}</span>
+              <span class="location-symbol">{{ location.symbol }}</span>
+            </a>
+          </div>
+        </div>
+      </div>      
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#home"><b>Home</b><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#about"><b>About</b></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#contact"><b>Contact</b></a>
+            </li>
+            <li class="nav-item dropdown" routerLinkActive="active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <b>Profile</b>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="/login" *ngIf='!passengerToken' style="color:blue">SignUp/SignIn</a>
+                    <a class="dropdown-item" routerLink="/bookings" *ngIf="passengerToken" style="color:blue">My Bookings</a>
+                    <a class="dropdown-item" (click)="onLogout()" *ngIf="passengerToken" style="color:blue">Logout</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" style="color:blue">Something else here</a>
+                </div>
+            </li>
+            <li>
+                <button (click)="toggleDarkMode()" class="colored-button" style="margin-left: 1px; margin-top:4px;">
+                    <i [ngClass]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'" class="dark-mode"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!-- Admin -->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="adminToken">
+    <a class="navbar-brand" routerLink="/admin/dashboard"><b>book<img src="./assets/images/my.png" alt="" class="image" width="35px" height="35px" style="padding-left: 0px;">ticket</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline" #searchForm="ngForm" (ngSubmit)="onSubmit()">
+            <input class="form-control mr-sm-2" type="text"  [(ngModel)]="searchQuery" placeholder="Search for Movies,Events,TvShows......." aria-label="Search" style="width:400px;">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" style="margin-right:50px;">Search</button>
+        </form>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/admin/dashboard"><b>Dashboard</b><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/admin/theaters"><b>Theater</b></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/admin/bookings"><b>Bookings</b></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/admin/add-film-or-theater"><b>AddFilmOrTheater</b></a>
+            </li>
+            <li class="nav-item dropdown" routerLinkActive="active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <b>Profile</b>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="/login" *ngIf="!adminToken" style="color:blue">SignUp/SignIn</a>
+                    <a class="dropdown-item" (click)="onLogout()" *ngIf="adminToken" style="color:blue">Logout</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" style="color:blue">Something else here</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Owner -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="ownerToken">
+    <a class="navbar-brand" routerLink="/owner/theaters"><b>book<img src="./assets/images/my.png" alt="" class="image" width="35px" height="35px" style="padding-left: 0px;">ticket</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse bg-dark" id="navbarSupportedContent">
+        <form class="form-inline" #searchForm="ngForm" (ngSubmit)="onSubmit()">
+            <input class="form-control mr-sm-2" type="text"  [(ngModel)]="searchQuery" placeholder="Search for Movies,Events,TvShows......." aria-label="Search" style="width:400px;">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" style="margin-right:200px;">Search</button>
+        </form>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/owner/theaters"><b>Theater</b></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/owner/bookings"><b>Bookings</b></a>
+            </li>
+            <li class="nav-item dropdown" routerLinkActive="active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <b>Profile</b>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="/login" *ngIf="!ownerToken" style="color:blue">SignUp/SignIn</a>
+                    <a class="dropdown-item" (click)="onLogout()" *ngIf="ownerToken" style="color:blue">Logout</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" style="color:blue">Something else here</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

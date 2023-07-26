@@ -1,0 +1,92 @@
+<div class="add-film-or-theatre" style="margin-top:35px;">
+    <form (ngSubmit)="onSubmit()" class="form-container text-light d-flex flex-column justify-content-center">
+      <h1 class="pb-4"><b>Add Film</b></h1>
+      <div class="main-form-container">
+        <div class="d-flex" style="gap: 20px;">
+          <div class="sub-form-container">
+            <div class="form-group">
+              <label for="title"><b>Title:</b></label>
+              <input type="text" id="title" name="title" class="form-control" [(ngModel)]="formData.title"
+                placeholder="Enter title">
+            </div>
+            <div class="form-group">
+              <label for="image_url"><b>Poster URL:</b></label>
+              <input type="text" id="image_url" name="image_url" class="form-control" [(ngModel)]="formData.image_url"
+                placeholder="Enter image_url URL">
+            </div>
+            <div class="form-group">
+              <label for="description"><b>Description:</b></label>
+              <input type="text" id="description" name="description" class="form-control"
+                [(ngModel)]="formData.description" placeholder="Enter Description">
+            </div>
+            <div class="form-group">
+              <label for="language"><b>Languages:</b></label>
+              <input type="text" id="language" name="language" class="form-control" [(ngModel)]="formData.language"
+                placeholder="Enter Languages">
+            </div>
+          </div>
+          <div class="sub-form-container">
+            <div class="form-group">
+              <label for="genre"><b>Genre:</b></label>
+              <input type="text" id="genre" name="genre" class="form-control" [(ngModel)]="formData.genre"
+                placeholder="Enter genre">
+            </div>
+            <div class="form-group">
+              <label for="duration"><b>Duration (Hours&minutes):</b></label>
+              <input type="text" id="duration" name="duration" class="form-control" [(ngModel)]="formData.duration"
+                placeholder="Enter duration">
+            </div>
+            <div class="form-group">
+              <label for="rating"><b>Rating</b></label>
+              <input type="text" id="rating" name="rating" class="form-control" [(ngModel)]="formData.rating"
+                placeholder="Enter Rating">
+            </div>
+            <div class="form-group">
+              <label for="release_date"><b>Release Date:</b></label>
+              <input type="datetime-local" id="release_date" name="release_date" class="form-control"
+                [(ngModel)]="formData.release_date" placeholder="Select departure time">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-4"><b>Add New Film</b></button>
+    </form>
+    <form (ngSubmit)="onSubmitTheatreData()" class="form-container text-light d-flex flex-column justify-content-center">
+      <h1 class=" pb-4"><b>Add Theater</b></h1>
+      <div class="main-form-container">
+        <div class="d-flex" style="gap: 20px;">
+          <div class="sub-form-container">
+            <div class="form-group">
+              <label for="name"><b>Name:</b></label>
+              <input type="text" id="name" name="name" class="form-control" [(ngModel)]="theatreFormData.name"
+                placeholder="Enter name">
+            </div>
+            <div class="form-group">
+              <label for="image_url"><b>Image URL:</b></label>
+              <input type="text" id="image_url" name="image_url" class="form-control" [(ngModel)]="theatreFormData.image_url"
+                placeholder="Enter Theater Image URL">
+            </div>
+          </div>
+          <div class="sub-form-container">
+            <div class="form-group">
+              <label for="city"><b>City:</b></label>
+              <input type="text" id="city" name="city" class="form-control" [(ngModel)]="theatreFormData.city"
+                placeholder="Enter city">
+            </div>
+            <div class="form-group">
+              <label for="state"><b>State:</b></label>
+              <input type="text" id="state" name="state" class="form-control" [(ngModel)]="theatreFormData.state"
+                placeholder="Enter state">
+            </div>
+            
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="capacity"><b>Capacity:</b></label>
+            <input type="number" id="capacity" name="capacity" class="form-control"
+              [(ngModel)]="theatreFormData.capacity" placeholder="Enter Capacity">
+          </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-4"><b>Add New Theater</b></button>
+    </form>
+  </div>

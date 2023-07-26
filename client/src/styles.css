@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+body{
+    font-family: "Roboto";
+}
+/* Light mode styles */
+  header {
+    background-color: #fff;
+    padding: 10px;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode {
+    background-color: #333;
+    color: #f9f9f9;
+  }
+  
+  header.dark-mode {
+    background-color: #222;
+  }
+  
+  /* CSS for the colored button */
+.colored-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #f9f9f9; /* Set the default color for the icons in light mode */
+}
+
+.colored-button.dark-mode {
+  color: #ffcc00; /* Set the color for the icons in dark mode */
+}

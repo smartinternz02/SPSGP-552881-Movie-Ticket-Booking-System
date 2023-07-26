@@ -1,0 +1,7 @@
+.theaters-container{
+    list-style-type:none;
+    min-height: 90vh;
+    padding: 20px;
+    background-image: url('https://png.pngtree.com/background/20210710/original/pngtree-international-film-festival-atmospheric-cool-theater-banner-picture-image_995951.jpg');
+    background-size: cover;
+}

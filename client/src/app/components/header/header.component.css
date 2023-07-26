@@ -1,0 +1,96 @@
+ 
+.navbar{
+    min-height: 10vh;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    padding: 0 20px;
+    position: fixed;
+   width: 100%;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Higher z-index to keep navbar on top */
+  }
+  /* Styles for the location pop-up menu */
+.dropdown{
+           margin-right: 5px;
+  }
+/* .location-popup {
+    position: absolute; */
+    /* top: 100%; Place the pop-up menu below the 'Select Location' div */
+    /* right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px; */
+    /* display: none; Hide the pop-up menu by default */
+  /* } */
+  
+  /* Show the pop-up menu when the 'showPopup' variable is true */
+  /* .location-popup.show {
+    display: block;
+  }
+   */
+  /* Style the 'Select Location' div */
+  /* .selected-location {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .selected-location:hover {
+    background-color: #f2f2f2;
+  } */
+  
+  /* Style the location items in the pop-up menu */
+  /* .location-popup li {
+    cursor: pointer;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+  } */
+  
+  /* Adjust the styles for the symbols (emojis) as needed */
+  /* .location-popup li span {
+    margin-right: 5px;
+    font-size: 18px;
+  } */
+  /* header.component.css (or global styles file) */
+
+/* Style the dropdown menu items */
+.dropdown-items {
+    color:blue; /* Text color */
+    background-color:green; /* Background color */
+  }
+  
+  /* Change the background color when hovering over the dropdown menu items */
+  .dropdown-items:hover {
+    background-color:deeppink;
+  }
+  
+  /* Style the 'Select Location' button */
+  .btn-secondary {
+    background-color:darkorange; /* Button background color */
+    color:black; /* Text color */
+    border: 1px solid black; /* Border color */
+  }
+  
+  .btn-secondary:hover {
+    background-color:deepskyblue; /* Button background color on hover */
+  }
+  
+@media screen and (max-width:768px) {
+    .navbar{
+        background-color: white;
+        padding: 12px;
+    }
+}
+
+.dropdown-item{
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+/* .user-container{
+    background-image: url('https://e7.pngegg.com/pngimages/132/496/png-clipart-postage-stamps-paper-label-college-confidential-text-logo.png'); 
+    background-size: cover;
+} */
+.user-container{
+    margin-top: 20px;
+    /* align-items:initial; */
+    display: flex;
+    /* align-items: center; */
+    min-height: 150vh;
+    width: 100%;
+    /* justify-content: space-between; */
+    padding: 40px;
+    gap: 60px;
+    background-image: url('https://www.magic-ug.org/wp-content/uploads/2016/10/10932233_l-1.jpg');
+    background-size: cover;
+}
