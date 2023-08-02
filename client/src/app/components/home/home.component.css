@@ -4,10 +4,11 @@ main {
   padding: 20px;
   padding-top: 14vh;
 }
+/*Container section*/
 .container h2{
   /* text-align: left; */
   margin-left:-70px;
-  padding: 22px;
+  padding: 15px;
 }
 .card{
     display: grid; 
@@ -15,14 +16,15 @@ main {
     gap: 20px; 
     overflow-x: auto; 
     border-style: none;
-    align-content: end;
+    /* align-content:flex-end; */
     align-content: space-between;
-    margin-left: -55px;
-    width:1200px;
+    margin-left: -60px;
+    width:110%;
     padding-top:-10px;
     margin-right:-100px;
     max-width: 2000px;
     max-height: 400px;
+    /* position: relative; */
     
 }
 .card img{
@@ -33,6 +35,7 @@ main {
   margin-block: 15px;
   border-radius: 5px;
 }
+/*Carousels section*/
 .carousel img {
     margin-left:-30px;
     /* padding-left: -10px; */

@@ -28,6 +28,7 @@
     padding-bottom: 20px;
     width: 40%;
     border-radius:10vh;
+    margin-top: 60px;
 }
 @media screen and (max-width:768px) {
     .card{
@@ -44,6 +45,7 @@
     border-radius:20vh;
     padding-right: 30px;
     height: 60vh;
+    margin-top: 45px;
     width: 44%;
 }
 @media screen and (max-width:768px) {
