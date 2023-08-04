@@ -1,2 +1,2 @@
 # BookMyTicket
-Moving Booking System Project Using MEAN
+Moving Ticket Booking System Project By Using MEAN
