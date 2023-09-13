@@ -1,0 +1,55 @@
+/* Apply styling to the contact form container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image:url('https://st4.depositphotos.com/3788621/24041/i/450/depositphotos_240418588-stock-photo-movie-projection-silhouette-movie-time.jpg');
+    background-size: cover;
+  }
+  
+  /* Style the form heading */
+  h2 {
+    color:#28a745;  
+    padding-top:60px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style form inputs and textareas */
+  .form-control {
+    margin-bottom: 15px;
+    border-radius: 2vh solid 10px;
+  
+  }
+  
+  /* Style the error messages */
+  .text-danger {
+    color: #dc3545;
+  }
+  
+  /* Style the submit button */
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  /* Style the success message */
+  .alert-success {
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  /* Keyframes for blinking effect */
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  /* Apply the animation to the contact heading */
+  h2.blinking {
+    animation: blink 2s linear infinite; /* Adjust the duration as needed */
+  }
+  
