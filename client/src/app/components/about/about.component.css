@@ -1,0 +1,73 @@
+.about-page {
+  padding: 20px;
+}
+
+.about-header {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-top: 50px;
+  text-align: center;
+  font-weight: bolder;
+  color:darkgreen;
+  margin-bottom: 30px;
+}
+
+/* .about-header h1 {
+  font-size: 36px;
+  color: #333;
+} */
+.about-header h1{
+  text-align: center; /* Center the text horizontally */
+}
+
+.blink {
+  animation: blinkAnimation 1s infinite; /* Blink animation with a 1-second duration */
+}
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  flex: 1;
+  margin-right: 50px;
+  font-size: 18px;
+  color: #555;
+  padding-left:10px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+.about-image{
+  padding-left: 30px;
+  margin-left: -40px;
+}
+.about-image img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+@keyframes blinkAnimation {
+  0% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0; /* Fully transparent */
+  }
+  100% {
+    opacity: 1; /* Fully visible again */
+  }
+}
+
+/* Add additional CSS for styling and animations to make the page mesmerizing */
